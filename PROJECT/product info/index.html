@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Booking</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <style>
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .popup.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/22UBC548/nk/PROJECT/connect.php" method="post">
+        <div id="booking" class="section">
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-md-push-5">
+                            <div class="booking-cta">
+                                <h1>Make your booking here...!</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-md-pull-7">
+                            <div class="booking-form">
+                                <div class="form-group">
+                                    <span class="form-label">Username</span>
+                                    <input class="form-control" type="text" name="username" placeholder="Enter Your Username " required>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-label">Email</span>
+                                    <input class="form-control" type="email" name="email" placeholder="Enter Your Email " required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">Phone Number</span>
+                                            <input class="form-control" type="text" name="phone" placeholder="Enter Your Phone Number " required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-btn">
+                                    <button class="submit-btn" id="book-btn">BOOK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="popup" id="popup">
+        <h2>Booking Successful!</h2>
+        <p>Your booking has been successfully submitted. We will contact you soon to confirm the details.</p>
+        <button id="close-popup">Close</button>
+    </div>
+
+    <script>
+        const bookBtn = document.getElementById('book-btn');
+        const popup = document.getElementById('popup');
+        const closeBtn = document.getElementById('close-popup');
+
+        bookBtn.addEventListener('click', () => {
+            popup.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
