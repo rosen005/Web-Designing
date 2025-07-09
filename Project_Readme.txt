@@ -1,6 +1,6 @@
 
 
-Download cade > open the file > click woodshub.html page
+Download code > open the file > click woodshub.html page
 
 
 # WoodsHub
